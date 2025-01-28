@@ -5,7 +5,7 @@
 
 
 # Install required libraries
-get_ipython().system('pip install datasets')
+#get_ipython().system('pip install datasets')
 
 # Import necessary libraries
 from datasets import load_dataset
