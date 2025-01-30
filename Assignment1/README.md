@@ -5,7 +5,7 @@ we have files
 1.data_setup.py : dwonload imdb dataset from dataset library and save it in a sql database
 
 2.train_model.ipynb : notebook shows bulding a sentimental model on the above data with logistic regression
-ouputs model.pkl file and tfidf_vectorizer.pkl file , we are using the logistic regression model.
+ouputs `logreg_model.pkl` file and `tfidf_vectorizer.pkl` file , we are using the logistic regression model.
 
 3.app.py : runs the flask webapp
 
