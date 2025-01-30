@@ -27,5 +27,9 @@ Follow these steps to set up the project locally:
 Clone the repository using Git:
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/data2450/Assignments.git
+
+#move into the assigment1
+
+cd Assignment1
 
