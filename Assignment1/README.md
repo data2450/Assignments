@@ -32,4 +32,31 @@ git clone https://github.com/data2450/Assignments.git
 #move into the assigment1
 
 cd Assignment1
+```
+### 2. Set Up a Virtual Environment (Optional but recommended)
 
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4. Run the Application
+```bash
+python app.py
+```
+Your Flask app should now be running at http://127.0.0.1:5000/.
+
+### 5. Testing the API
+You can test the application by sending a POST request to the /predict endpoint using curl or Postman:
+i am using curl
+```bash
+curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d "{\"review_text\": \"I love this product!\"}"
+
+```
+This should return a JSON response with the sentiment prediction.
+### Example Response:
+```bash
+{
+  "sentiment_prediction": "positive"
+}
+
+```
