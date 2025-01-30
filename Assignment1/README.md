@@ -62,3 +62,14 @@ This should return a JSON response with the sentiment prediction.
 }
 
 ```
+### 6. Running the model notebook
+you can simple go into the train_model.ipynb notebook and check how the model is trained 
+## model info
+* Model: Logistic Regression
+* Feature Extraction: TF-IDF Vectorizer
+* Configuration:
+  * max_features=5000: Limits the number of features to the top 5000 terms based on their TF-IDF scores.
+  * stop_words='english': Excludes common English stop words from the feature set.
+
+## Key Results
+Final Accuracy on Test Set: 88%
