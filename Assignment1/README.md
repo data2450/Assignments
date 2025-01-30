@@ -16,7 +16,7 @@ Before you begin, ensure you have met the following requirements:
 
 - Python 3.x (use `python --version` to check your Python version)
 - `pip` (Python package installer)
-- Any other software or libraries that are required
+- packages mentioned in requirment.txt
 
 ## Installation
 
