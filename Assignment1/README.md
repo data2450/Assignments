@@ -9,6 +9,8 @@ ouputs `logreg_model.pkl` file and `tfidf_vectorizer.pkl` file , we are using th
 
 3.app.py : runs the flask webapp
 
+your database file name is imdb_reviews.db
+
 
 ## Prerequisites
 
