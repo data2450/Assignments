@@ -1,4 +1,4 @@
-# Assignment1
+# Assignment2
 
 RAG based chatboat on given text or corpus
 
