@@ -33,17 +33,27 @@ def get_db_connection():
 
 # Function to save chat history to MySQL
 def save_chat_history(role, content):
-    print('in')
+    
     connection = get_db_connection()
-    print('5')
+  
     if connection:
-        print('7')
+        
         cursor = connection.cursor()
         cursor.execute("INSERT INTO messages (role, content) VALUES (%s, %s)", (role, content))
         connection.commit()
         cursor.close()
         connection.close()
-
+# Function to retrieve chat history
+def get_chat_history():
+    connection = get_db_connection()
+    if connection:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT role, content FROM messages ORDER BY id ASC")
+        history = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return history
+    return []
 # Initialize Flask app
 app = Flask(__name__)
 
@@ -87,11 +97,15 @@ def chat():
     # Save user query and system response to the database
     #print('1')
     save_chat_history(role='user', content=query)
-    print('2')
     save_chat_history(role='system', content=answer)
-    print('3')
+  
     
     return jsonify({"answer": answer})
+# Flask API Route to get chat history
+@app.route('/history', methods=['GET'])
+def history():
+    chat_history = get_chat_history()
+    return jsonify({"history": chat_history})
 
 # Run the Flask app
 if __name__ == '__main__':
