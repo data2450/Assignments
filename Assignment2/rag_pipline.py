@@ -112,4 +112,4 @@ add_to_vector_db(chunks)
 # Query the RAG pipeline
 query = "What is artificial intelligence?"
 answer = rag_pipeline(query)
-print("Generated Answer:", answer)
+#print("Generated Answer:", answer)
