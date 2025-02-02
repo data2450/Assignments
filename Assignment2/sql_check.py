@@ -8,7 +8,7 @@ def get_db_connection():
             host='localhost',  # Example: 'localhost' or 'sql12.freemysqlhosting.net'
             database='chat_history',
             user='root',
-            password='2450242',
+            password='password',
             port=3306
         )
         print('3')

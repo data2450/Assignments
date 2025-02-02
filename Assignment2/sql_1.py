@@ -8,7 +8,7 @@ try:
     connection = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='2450242',  # Replace with your actual password
+        password='password',  # Replace with your actual password
         port=3306
     )
     if connection.is_connected():

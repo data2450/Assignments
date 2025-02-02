@@ -21,7 +21,7 @@ def get_db_connection():
             host='localhost',
             database='chat_history',  # Your database name
             user='root',  # Your MySQL username
-            password='2450242'  # Your MySQL password
+            password='password'  # Your MySQL password
         )
         if connection.is_connected():
             print('Connected to MySQL server')
