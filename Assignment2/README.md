@@ -58,7 +58,7 @@ curl -X POST http://localhost:5000/chat -H "Content-Type: application/json" -d "
 
 
 ```
-This should return a JSON response with the sentiment prediction.
+This should return a JSON response with the answer to the query
 ### Example Response:
 ```bash
 {
@@ -67,7 +67,37 @@ This should return a JSON response with the sentiment prediction.
 
 ```
 ### 6.you can test /history endpoint also, 
-since i have not included sql feature only in app_new.py script
+since i have not included sql feature only in app_new.py script , so i order to run this u need to setup ure database and give ure datase
+ credentials into the code , 
+## 7. Database Schema:
+create ure database
+```bash
+CREATE DATABASE chat_history;
+USE chat_history;
+
+```
+create the table
+
+```bash
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    role ENUM('user', 'system') NOT NULL,
+    content TEXT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+connect ure sql database and the webapp outputs
+go inside app_new.py and change the sql credentiols correctly
+```bash
+        # Replace with your MySQL credentials
+        connection = mysql.connector.connect(
+            host='localhost',
+            database='chat_history',  # Your database name
+            user='root',  # Your MySQL username
+            password='password'  # Your MySQL password
+        )
+```
+check ure endpoints
 ```bash
 python app_new.py
 ```
@@ -101,32 +131,4 @@ ure previous query and its answer generated
     ]
 }
 
-```
-### 7. Database Schema:
-create ure database
-```bash
-CREATE DATABASE chat_history;
-USE chat_history;
-
-```
-create the table
-
-```bash
-CREATE TABLE messages (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    role ENUM('user', 'system') NOT NULL,
-    content TEXT NOT NULL,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-connect ure sql database and the webapp outputs
-go inside app_new.py and change the sql credentiols correctly
-```bash
-        # Replace with your MySQL credentials
-        connection = mysql.connector.connect(
-            host='localhost',
-            database='chat_history',  # Your database name
-            user='root',  # Your MySQL username
-            password='password'  # Your MySQL password
-        )
 ```
